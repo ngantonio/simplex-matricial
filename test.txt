@@ -1,0 +1,111 @@
+
+ 
+	 ### MÉTODO SIMPLEX MATRICIAL ### 
+
+El siguiente programa calcula un problema de maximización 
+mediante el método simplex matricial en su forma básica. 
+
+Para que este programa arroje resultados logicos y correctos,
+el problema de optimización a calcular debe reescribirse en
+su forma matricial añadiendo las correspondientes variables de
+holgura y exceso según corresponda para cada restricción dada,
+incluyendolas en la función objetivo con valores iguales a 0.
+
+Los datos para calcular dicho problema de optimización
+deben ser leidos desde archivo "simplex.in" proporcionado
+en este mismo directorio de la forma que sigue:
+
+linea 1: DIMENSIÓN DE LA MATRIZ (MxN)
+linea 2: VARIABLES DEL PROBLEMA
+linea 3: COEFICIENTES DE LA FUNCIÓN OBJETIVO
+linea 4: RESTRICCIONES DEL PROBLEMA
+linea 5: VARIABLES BASICAS INCIALES
+lineas 6...N: MATRIZ DE COEFICIENTES DEL PROBLEMA
+
+Si el problema a calular en su forma estandar es: 
+
+MAX 1a + 1b
+s.a: -4a +3b + c = 4
+      1a + 1b + d = 5
+
+El archivo de entrada debe contener los siguientes datos:
+
+4 2
+a b c d
+1 1 0 0
+4 5
+a c
+-4 3 1 0
+1 1 0 1
+
+OBSERVACIONES:
+
+1- La dimensión de la matriz es dada por el numero de variables del
+problema incluyendo las variables de holgura y exceso(M) Y el numero
+de restricciones que tenga el problema(N)
+
+2- Los numeros en el archivo de entrada deben de estar separados
+entre si por un espacio en blanco
+
+3- OCTAVE no permite la lectura de varios caracteres como uno solo,
+por esta razón las variables del problema deben ser de un solo caracter
+y no deben repetirse entre si, (x1,x2,h1,e2 no son permitidas..) 
+
+ 
+Lectura de datos del archivo "simplex.in": 
+
+
+Variables asociadas al problema estandar:
+
+abcdef
+
+Función objetivo:
+
+C =
+
+   2   3   4   5   0   0
+
+
+Matriz de coeficientes:
+
+A =
+
+   3   0   1   1   1   0
+  -1   1   2   0   0   1
+
+
+Vector de restricciones:
+
+b =
+
+   2
+   1
+
+
+Variables basicas:
+base_vars = fd
+
+
+__________________________________________________________________________
+|::::::::::::::::::::::::FIN DE LAS ITERACIONES::::::::::::::::::::::::::|
+
+|:::::::::::::::::::::::::::: RESUMEN :::::::::::::::::::::::::::::::::::|
+
+| Cantidad de iteraciones: 2
+| Variables que quedaron en la base: bd 
+| Coeficientes de las variables que quedaron en la base:
+
+Cb =
+
+   3   5
+
+| Variables no basicas: afce 
+| Coeficientes de las variables no basicas:
+
+coef_nobasicas =
+
+  -10   -3   -7   -5
+
+| Valor de Z alcanzado: 13.000000 
+|________________________________________________________________________|
+
